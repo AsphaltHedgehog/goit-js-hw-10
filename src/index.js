@@ -18,7 +18,7 @@ const selector = new SlimSelect({
 
 
 
-import { fetchBreeds, fetchBreedImg } from "./javascript/cat-api.js"
+import { fetchBreeds, fetchBreedImg } from "./js/cat-api"
 //
 // 
 // 
