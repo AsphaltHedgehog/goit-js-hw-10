@@ -1,6 +1,8 @@
 
 import SlimSelect from 'slim-select'
 
+import "slim-select/dist/slimselect.css"
+
 const selector = new SlimSelect({
   select: "#selector",
   showSearch: false,
@@ -14,7 +16,9 @@ const selector = new SlimSelect({
 //
 // ======================================================================
 
-import { fetchBreeds, fetchBreedImg } from "./javaScript/cat-api.js"
+
+
+import { fetchBreeds, fetchBreedImg } from "./javascript/cat-api.js"
 //
 // 
 // 
@@ -32,6 +36,8 @@ export const refs = {
 //
 // ======================================================================
 
+// selector.slim.style.display = 'none'
+
 function populateBreedSelector() {
   fetchBreeds().then(
     data => {
@@ -42,12 +48,14 @@ function populateBreedSelector() {
       const nameArray = data.map(obj => (
         { text: `${obj.name}`, value: `${obj.id}` }));
       selector.setData(nameArray)
+      showSelector()
+      loadHide()
+      errorHide()
       eventListener()
   }).catch(
     error => {
       console.error(error);
-      errorToggle()
-      loadHide()
+      errorShow()
       // refs.errorMsg.classList.toggle("isInvisible");
     }
 )
@@ -87,15 +95,14 @@ function onSelectedBreed(ev) {
       // refs.loadingMsg.classList.add("isInvisible")
       loadHide()
       // refs.card.classList.add("border")
-      borderShow()
-
       // =========================================
-
-    drawCard(data,ev.target.value)
+      drawCard(data, ev.target.value)
+      borderShow()
+      errorHide()
     }).catch(
       error => {
         console.log(error);
-        errorToggle()
+        errorShow()
         loadHide()
     // refs.errorMsg.classList.remove("isInvisible");
   });
@@ -129,8 +136,8 @@ function loadHide() {
   refs.loadingMsg.classList.add("isInvisible")
 }
 
-function errorToggle() {
-  refs.errorMsg.classList.toggle("isInvisible");
+function errorShow() {
+  refs.errorMsg.classList.remove("isInvisible");
 }
 
 function errorHide() {
@@ -148,4 +155,12 @@ function selectorActive() {
 
 function borderShow() {
   refs.card.classList.add("border")
+}
+
+function showSelector() {
+  refs.breedSelector.classList.remove('ss-hide')
+}
+
+function hideSelector() { 
+refs.breedSelector.classList.add('ss-hide')
 }

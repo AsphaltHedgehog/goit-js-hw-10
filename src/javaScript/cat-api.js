@@ -1,4 +1,4 @@
-import { refs } from "..";
+
 
 const URL = 'https://api.thecatapi.com/v1';
 const IMG_URL ='/images/search?breed_ids='
@@ -14,13 +14,22 @@ const parameters = {
 
 export function fetchBreeds() {
   return fetch(`${URL}/breeds`, parameters).then(
-    response => response.json()
-  )
+    response => {
+      if (!response.ok) {
+        throw new Error("ops... something went wrong, reload page")
+      };
+      return response.json()
+    })
 };
 
 export function fetchBreedImg(breedId) {
   return fetch(`${URL}${IMG_URL}${breedId}`).then(
-    response => response.json() )
+    response => {
+      if (!response.ok) {
+        throw new Error("ops... something went wrong, reload page")
+      };
+      return response.json()
+    })
 };
 
 
