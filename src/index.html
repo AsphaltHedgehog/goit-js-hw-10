@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homework 10</title>
     <link rel="stylesheet" href="./sass/index.scss" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/slim-select@latest/dist/slimselect.css"
+    />
   </head>
   <body>
-    <select class="breed-select isInvisible"></select>
+    <select id="selector" class="breed-select isInvisible">
+      <option data-placeholder="true"></option>
+    </select>
     <p class="loader isInvisible">Loading data, please wait...</p>
+    <!-- <span class="loader"></span> -->
     <p class="error isInvisible">
       Oops! Something went wrong! Try reloading the page!
     </p>

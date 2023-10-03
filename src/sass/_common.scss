@@ -1,7 +1,135 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
+// =================================================
+
+// .loader {
+//   width: 48px;
+//   height: 48px;
+//   border-radius: 50%;
+//   position: relative;
+//   animation: rotate 1s linear infinite
+// }
+
+// .loader::before {
+//   content: "";
+//   box-sizing: border-box;
+//   position: absolute;
+//   inset: 0px;
+//   border-radius: 50%;
+//   border: 5px solid #FFF;
+//   animation: prixClipFix 2s linear infinite;
+// }
+
+// @keyframes rotate {
+//   100% {
+//     transform: rotate(360deg)
+//   }
+// }
+
+// @keyframes prixClipFix {
+//   0% {
+//     clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+//   }
+
+//   25% {
+//     clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+//   }
+
+//   50% {
+//     clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+//   }
+
+//   75% {
+//     clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+//   }
+
+//   100% {
+//     clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+//   }
+// }
+
+// =================================================
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.breed-select {
+  margin-bottom: 30px;
+}
+
+body .ss-main {
+  width: 300px;
+}
 
 .isInvisible {
   display: none;
   text-decoration: dashed;
+}
+
+.text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #2f2f37;
+  max-width: 960px;
+  padding: 16px;
+  border: 1px solid black;
+}
+
+.headers {
+  font-family: monospace;
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.wiki {
+  transition: color 300ms ease;
+  text-decoration: none;
+}
+
+.wiki:hover, .wiki:focus {
+  color: rgba(36, 138, 138, 0.438);
+
+}
+
+// .headers {
+//   font-family: monospace;
+//   font-size: 28px;
+//   font-weight: 700;
+//   background-color: #12e4d2ef;
+//   color: #000000;
+//   padding: 2px 6px;
+//   border-radius: 2px;
+// }
+
+.cat-info {
+  display: flex;
+  width: 900px;
+  padding-right: 10px;
+  border-radius: 6px;
+
+}
+
+.border {
+  border: 2px solid black;
+}
+
+.img {
+  object-fit: cover;
+}
+
+.text-wrapper {
+  margin-left: 10px;
+}
+
+.error {
+  color: red;
 }
